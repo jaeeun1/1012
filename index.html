@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>할로윈 호박 꾸미기</title>
+</head>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap');
+		body{margin: 0; background-color: #7C7C7C;font-family: 'Alkalami', serif;}
+		#ppp{text-align: center;}
+		#pumpkinChange{width: 1000px;}
+		button{width: 100px; height: 30px;}
+
+/*랜덤배경*/
+	.item1{width: 25px; position: absolute; z-index: -9999; }
+	.item2{width: 50px; position: absolute; z-index: -9999; }
+	.aaa{width: 300px;}
+
+
+	</style>
+<body>
+	<div id="ppp">
+
+		<h1>Make your own Jack-0'lantern!!!</h1>
+
+		<p>
+			<img src="pumpkin1.png" id="pumpkinChange">
+		</p>
+		<p>
+			<button onclick="changePic(0)";>이전</button>
+			<button onclick="changePic(1)";>다음</button>
+		</p>
+
+	<div>
+
+		<img src = "face1.png" id="face1" class="aaa">
+	  	<img src = "face2.png" id="face2" class="aaa">
+	  	<img src = "face3.png" id="face3" class="aaa">
+
+	</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+
+
+//랜덤배경만들기
+		makeNight();
+			function makeNight(){
+				let timer = setInterval(randomitem,100);	
+				let t = 0;
+				function randomitem(){
+					t++;
+					makeitem1();
+					makeitem2();
+					makeitem3();
+					makeitem4();
+					makeitem5();
+					makeitem6();
+					makeitem7();
+					makeitem8();
+					makeitem9();
+					if(t == 3){
+					clearInterval(timer);
+					}
+				}
+				}
+			
+		function makeitem1(){
+			var a = document.createElement("img");
+			a.src = "vat1.png";
+			a.className = "item2"
+			var b = Math.random()*window.innerWidth;
+			var c = Math.random()*window.innerHeight;
+			a.style.left = b + "px";
+			a.style.top = c + "px";
+			document.body.appendChild(a);
+			}
+		function makeitem2(){
+			var a = document.createElement("img");
+			a.src = "vat2.png";
+			a.className = "item2"
+			var b = Math.random()*window.innerWidth;
+			var c = Math.random()*window.innerHeight;
+			a.style.left = b + "px";
+			a.style.top = c + "px";
+			document.body.appendChild(a);
+			}
+		function makeitem3(){
+			var a = document.createElement("img");
+			a.src = "vat3.png";
+			a.className = "item1"
+			var b = Math.random()*window.innerWidth;
+			var c = Math.random()*window.innerHeight;
+			a.style.left = b + "px";
+			a.style.top = c + "px";
+			document.body.appendChild(a);
+			}
+		function makeitem4(){
+			var a = document.createElement("img");
+			a.src = "skurl1.png";
+			a.className = "item2"
+			var b = Math.random()*window.innerWidth;
+			var c = Math.random()*window.innerHeight;
+			a.style.left = b + "px";
+			a.style.top = c + "px";
+			document.body.appendChild(a);
+			}
+		function makeitem5(){
+			var a = document.createElement("img");
+			a.src = "skurl2.png";
+			a.className = "item1"
+			var b = Math.random()*window.innerWidth;
+			var c = Math.random()*window.innerHeight;
+			a.style.left = b + "px";
+			a.style.top = c + "px";
+			document.body.appendChild(a);
+			}
+		function makeitem6(){
+			var a = document.createElement("img");
+			a.src = "bone1.png";
+			a.className = "item1"
+			var b = Math.random()*window.innerWidth;
+			var c = Math.random()*window.innerHeight;
+			a.style.left = b + "px";
+			a.style.top = c + "px";
+			document.body.appendChild(a);
+			}
+		function makeitem7(){
+			var a = document.createElement("img");
+			a.src = "bone2.png";
+			a.className = "item1"
+			var b = Math.random()*window.innerWidth;
+			var c = Math.random()*window.innerHeight;
+			a.style.left = b + "px";
+			a.style.top = c + "px";
+			document.body.appendChild(a);
+			}
+		function makeitem8(){
+			var a = document.createElement("img");
+			a.src = "thunder1.png";
+			a.className = "item1"
+			var b = Math.random()*window.innerWidth;
+			var c = Math.random()*window.innerHeight;
+			a.style.left = b + "px";
+			a.style.top = c + "px";
+			document.body.appendChild(a);
+			}
+		function makeitem9(){
+			var a = document.createElement("img");
+			a.src = "thunder2.png";
+			a.className = "item1"
+			var b = Math.random()*window.innerWidth;
+			var c = Math.random()*window.innerHeight;
+			a.style.left = b + "px";
+			a.style.top = c + "px";
+			document.body.appendChild(a);
+			}
+
+		makeitem1();
+		makeitem2();
+		makeitem3();
+		makeitem4();
+		makeitem5();
+		makeitem6();
+		makeitem7();
+		makeitem8();
+		makeitem9();
+
+		
+//호박바꾸기
+		var num	= 1;
+		function changePic(idx){
+			if(idx){
+				if(num == 4) return;
+				num++;
+			}else{
+				if(num == 1) return;
+				num--;
+			}
+			var imgTag = document.getElementById("pumpkinChange");
+			imgTag.setAttribute("src","pumpkin"+num+".png");
+		}
+
+//face1
+	face1.onmousedown = function(event) {
+	  face1.style.position = 'absolute';
+	  face1.style.zIndex = 1000;
+
+	  document.body.append(face1);
+
+	  function moveAt(pageX, pageY) {
+	    face1.style.left = pageX - face1.offsetWidth / 2 + 'px';
+	    face1.style.top = pageY - face1.offsetHeight / 2 + 'px';
+	  }
+
+	  moveAt(event.pageX, event.pageY);
+
+	  function onMouseMove(event) {
+	    moveAt(event.pageX, event.pageY);
+	  }
+
+	  document.addEventListener('mousemove', onMouseMove);
+
+	  face1.onmouseup = function() {
+	    document.removeEventListener('mousemove', onMouseMove);
+	    face1.onmouseup = null;
+	  };
+
+		  face1.ondragstart = function() {
+		  	return false;
+			};
+
+	};
+
+//face2
+	face2.onmousedown = function(event) {
+	  face2.style.position = 'absolute';
+	  face2.style.zIndex = 1000;
+
+	  document.body.append(face2);
+
+	  function moveAt(pageX, pageY) {
+	    face2.style.left = pageX - face2.offsetWidth / 2 + 'px';
+	    face2.style.top = pageY - face2.offsetHeight / 2 + 'px';
+	  }
+
+	  moveAt(event.pageX, event.pageY);
+
+	  function onMouseMove(event) {
+	    moveAt(event.pageX, event.pageY);
+	  }
+
+	  document.addEventListener('mousemove', onMouseMove);
+
+	  face2.onmouseup = function() {
+	    document.removeEventListener('mousemove', onMouseMove);
+	    face2.onmouseup = null;
+	  };
+
+		  face2.ondragstart = function() {
+		  	return false;
+			};
+
+	};
+
+//face3
+	face3.onmousedown = function(event) {
+	  face3.style.position = 'absolute';
+	  face3.style.zIndex = 1000;
+
+	  document.body.append(face3);
+
+	  function moveAt(pageX, pageY) {
+	    face3.style.left = pageX - face3.offsetWidth / 2 + 'px';
+	    face3.style.top = pageY - face3.offsetHeight / 2 + 'px';
+	  }
+
+	  moveAt(event.pageX, event.pageY);
+
+	  function onMouseMove(event) {
+	    moveAt(event.pageX, event.pageY);
+	  }
+
+	  document.addEventListener('mousemove', onMouseMove);
+
+	  face3.onmouseup = function() {
+	    document.removeEventListener('mousemove', onMouseMove);
+	    face3.onmouseup = null;
+	  };
+
+		  face3.ondragstart = function() {
+		  	return false;
+			};
+
+	};
+
+
+	</script>
+</body>
+</html>
